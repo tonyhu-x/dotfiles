@@ -6,6 +6,7 @@ vim.g.mapleader = ' '
 keymap('', '`', '\'', opts)
 keymap('', '\'', '`', opts)
 keymap('', '<leader>e', "<Cmd>call VSCodeNotify('workbench.view.explorer')<CR>", opts)
+keymap('', '<leader>E', "<Cmd>call VSCodeNotify('workbench.files.action.showActiveFileInExplorer')<CR>", opts)
 keymap('', '<leader>p', "<Cmd>call VSCodeNotify('workbench.action.showCommands')<CR>", opts)
 
 keymap('i', '<C-c>', '<Esc>', opts)
