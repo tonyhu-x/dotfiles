@@ -64,6 +64,21 @@ return require('packer').startup(function(use)
         end
     }
 
-    use 'neovim/nvim-lspconfig'
+    use {
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+        'neovim/nvim-lspconfig',
+        run = ':MasonUpdate',
+    }
+
+    use {
+        'L3MON4D3/LuaSnip',
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/nvim-cmp',
+        'L3MON4D3/cmp-luasnip-choice',
+    }
 end)
 
