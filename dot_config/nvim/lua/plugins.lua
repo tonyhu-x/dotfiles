@@ -70,6 +70,9 @@ return require('packer').startup(function(use)
         config = function()
             require('nvim-tree').setup {
                 sort_by = 'extension',
+                view = {
+                    width = {},
+                },
             }
         end,
     }
