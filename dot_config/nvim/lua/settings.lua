@@ -34,6 +34,18 @@ vim.opt.relativenumber = true
 vim.opt.wildmenu = true
 vim.opt.splitright = true
 
+-- diagnostics
+local signs = {
+  { name = "DiagnosticSignError", text = "" },
+  { name = "DiagnosticSignWarn", text = "" },
+  { name = "DiagnosticSignHint", text = "" },
+  { name = "DiagnosticSignInfo", text = "" },
+}
+
+for _, sign in ipairs(signs) do
+  vim.fn.sign_define(sign.name, { numhl = sign.name })
+end
+
 -- file format
 -- create new files with CRLF in Windows directories
 vim.api.nvim_create_autocmd('BufNewFile', {
