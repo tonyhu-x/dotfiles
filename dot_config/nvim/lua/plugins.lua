@@ -61,7 +61,17 @@ return require('packer').startup(function(use)
             vim.opt.timeout = true
             vim.opt.timeoutlen = 500
             require('which-key').setup()
-        end
+        end,
+    }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+	    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        config = function()
+            require('nvim-tree').setup {
+                sort_by = 'extension',
+            }
+        end,
     }
 
     use {

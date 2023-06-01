@@ -1,5 +1,7 @@
 HOME = os.getenv("HOME")
-vim.opt.exrc = true
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
  
 -- theme and related settings
 if vim.opt.termguicolors ~= nil then
@@ -38,6 +40,9 @@ vim.api.nvim_create_autocmd('BufNewFile', {
     pattern = '*',
     callback = function()
         if string.find(vim.fn.expand('%:p'), 'mnt') ~= nil then
+            vim.opt.ff = 'dos'
+        end
+        if string.find(vim.fn.getcwd(), 'mnt') ~= nil then
             vim.opt.ff = 'dos'
         end
     end
