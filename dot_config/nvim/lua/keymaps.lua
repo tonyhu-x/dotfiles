@@ -25,10 +25,10 @@ keymap('x', '<leader>c', '<Plug>(comment_toggle_linewise_visual)')
 
 -- nvim-tree
 local tree = require('nvim-tree.api')
-keymap('n', '<leader>e', tree.tree.toggle)
+keymap('n', '<leader>e', tree.tree.toggle, opts)
 keymap('n', '<leader>E', function()
     tree.tree.find_file({ open = true, focus = true })
-end)
+end, opts)
 
 -- unused keymap for netrw
 -- keymap('', '<leader>e', ':e %:p:h<CR>', opts) -- explore directory of current buffer
