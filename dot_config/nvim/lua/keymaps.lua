@@ -9,6 +9,8 @@ keymap('', '<C-s>', ':w<CR>', opts)
 
 keymap('i', '<C-c>', '<Esc>', opts)
 
+keymap('t', '<Esc>', '<C-\\><C-n>', opts)
+
 -- telescope
 keymap('n', '<leader>f', require('telescope.builtin').live_grep, vim.tbl_extend('error', opts, { desc = 'Telescope: live grep' }))
 keymap('n', '<leader>b', require('telescope.builtin').buffers, vim.tbl_extend('error', opts, { desc = 'Telescope: open buffers' }))
