@@ -29,27 +29,33 @@ cmp.setup {
         end, {"i","s","c",}
         ),
     },
-   sources = {
-        { name = 'nvim_lsp' },
-        { name = 'luasnip_choice' },
-    }
+    sources = cmp.config.sources(
+        {
+            { name = 'nvim_lsp' },
+            { name = 'nvim_lsp_signature_help' },
+            { name = 'luasnip_choice' },
+        },
+        {
+            { name = 'buffer' },
+        }
+    ),
 }
 
 cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-        { name = 'buffer' }
+        { name = 'buffer' },
     },
 })
 
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = {
+    sources = cmp.config.sources(
         {
             { name = 'path' },
         },
         {
-            { name = 'cmdline'},
-        },
-    },
+            { name = 'cmdline' },
+        }
+    ),
 })
