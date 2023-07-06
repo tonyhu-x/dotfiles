@@ -29,8 +29,8 @@ init_vscode = function()
     keymap('i', '<C-c>', '<Esc>', opts)
 
     -- <Cmd> mappings technically don't need <silent>
-    keymap({'n', 'v'}, 'gD', "<Cmd>call VSCodeNotify('editor.action.peekDeclaration')<CR>", opts)
-    keymap({'n', 'v'}, 'gd', "<Cmd>call VSCodeNotify('editor.action.peekDefinition')<CR>", opts)
+    keymap({'n', 'v'}, 'gD', "<Cmd>call VSCodeNotify('editor.action.revealDeclaration')<CR>", opts)
+    keymap({'n', 'v'}, 'gd', "<Cmd>call VSCodeNotify('editor.action.revealDefinition')<CR>", opts)
     keymap({'n', 'v'}, 'gr', "<Cmd>call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>", opts)
     keymap({'n', 'v'}, 'gh', "<Cmd>call VSCodeNotify('editor.action.showHover')<CR>", opts)
     keymap({'n', 'v'}, 'go', "<Cmd>call VSCodeNotify('workbench.action.gotoSymbol')<CR>", opts)
