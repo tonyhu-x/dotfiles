@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
         'justinmk/vim-sneak',
         config = function()
             vim.cmd('let g:sneak#label = 1')
+            vim.cmd('let g:sneak#use_ic_scs = 1')
         end
     }
 
