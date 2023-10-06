@@ -54,6 +54,17 @@ init_vscode = function()
 
     -- swap file
     vim.opt.swapfile = false
+
+    require('packer').startup(function(use)
+        use 'wbthomason/packer.nvim'
+
+        use {
+            'justinmk/vim-sneak',
+            config = function()
+                vim.cmd('let g:sneak#label = 1')
+            end
+        }
+    end)
 end
 
 init_all()

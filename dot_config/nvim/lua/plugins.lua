@@ -24,6 +24,12 @@ return require('packer').startup(function(use)
     }
 
     use 'nanozuki/tabby.nvim'
+    use {
+        'justinmk/vim-sneak',
+        config = function()
+            vim.cmd('let g:sneak#label = 1')
+        end
+    }
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
