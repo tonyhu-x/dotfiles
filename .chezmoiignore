@@ -5,4 +5,5 @@
 
 {{ if ne .chezmoi.os "darwin" }}
 Library
+.config/karabiner
 {{ end }}
