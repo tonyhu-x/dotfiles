@@ -2,3 +2,7 @@
 **/*
 !AppData/Roaming/Code/User/settings.json
 {{ end }}
+
+{{ if ne .chezmoi.os "darwin" }}
+Library
+{{ end }}

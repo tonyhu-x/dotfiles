@@ -35,4 +35,29 @@
     ],
     "html.autoClosingTags": false,
     "diffEditor.ignoreTrimWhitespace": false,
+
+    // latex
+    "[latex]": {
+        "editor.formatOnPaste": false,
+        "editor.wordBasedSuggestions": false,
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.tabSize": 2,
+        "editor.autoClosingBrackets": "beforeWhitespace"
+    },
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-xelatex", // this has been changed from -pdf
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+    ],
 }
