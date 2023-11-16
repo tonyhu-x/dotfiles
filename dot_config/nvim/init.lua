@@ -2,8 +2,8 @@ local init_vscode
 
 local init_all = function()
     if vim.g.vscode == nil then
-        require('settings')
         require('plugins')
+        require('settings')
         require('keymaps')
         require('lsp')
         require('autocmpl')
