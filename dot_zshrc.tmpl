@@ -88,7 +88,11 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export REPO_URL=ssh://gerritgit/amd/ec/ext/google/repo
 export ARTKEYPATH=~/.ssh/id_rsa.pub
 export ARTUSERNAME=tonyhu12
+{{ if eq .chezmoi.os "darwin" }}
+export EDITOR=/opt/homebrew/bin/nvim
+{{ else }}
 export EDITOR=/usr/local/bin/nvim
+{{ end }}
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
