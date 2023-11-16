@@ -1,0 +1,38 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "relative",
+    "editor.fontSize": 13,
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font Mono', Consolas, 'Courier New', monospace",
+    "editor.smoothScrolling": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "explorer.autoReveal": false,
+    "explorer.sortOrder": "type",
+    "window.autoDetectColorScheme": true,
+    "window.commandCenter": false,
+
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
+    "workbench.preferredLightColorTheme": "Default Light+",
+
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.value": 3,
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.editor.navigationScope": "editorGroup",
+
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+
+    "vscode-neovim.useWSL": true,
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "myst.preview.extensions": [
+        "dollarmath",
+        "colon_fence"
+    ],
+    "html.autoClosingTags": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+}
