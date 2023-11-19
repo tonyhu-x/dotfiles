@@ -1,3 +1,4 @@
+require('neodev').setup()
 require('mason').setup()
 require('mason-lspconfig').setup()
 
@@ -14,7 +15,16 @@ end
 lspconfig.pyright.setup {
     capabilities = cmp_capabilities
 }
-
+lspconfig.lua_ls.setup {
+    capabilities = cmp_capabilities,
+    settings = {
+        Lua = {
+            completion = {
+                callSnippet = "Replace"
+            }
+        }
+    }
+}
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

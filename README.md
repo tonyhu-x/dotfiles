@@ -5,6 +5,8 @@ manually executed to finish setup.
 
 ## Neovim
 
+All plugins need to be
+
 LSP language servers can be managed through `:Mason`. After installation, they
 need to be added to `lsp.lua` list of configured servers.
 
