@@ -119,6 +119,14 @@ return require('packer').startup(function(use)
         'L3MON4D3/cmp-luasnip-choice',
     }
 
+    use {
+        'kaarmu/typst.vim',
+        ft = {'typst'},
+        config = function ()
+            vim.cmd('let g:typst_pdf_viewer = "Preview"')
+        end
+    }
+
     if packer_bootstrap then
         require('packer').sync()
     end

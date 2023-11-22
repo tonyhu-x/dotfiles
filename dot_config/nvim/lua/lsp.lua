@@ -25,6 +25,12 @@ lspconfig.lua_ls.setup {
         }
     }
 }
+lspconfig.typst_lsp.setup {
+    root_dir = function() return vim.fn.getcwd() end,
+    settings = {
+        exportPdf = "never",
+    }
+}
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

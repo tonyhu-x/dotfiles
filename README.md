@@ -10,6 +10,10 @@ All Neovim plugins should now automatically install during first-time Neovim set
 LSP language servers can be managed through `:Mason`. After installation, they
 need to be added to `lsp.lua` list of configured servers.
 
+Neovim Typst support (obviously) requires Typst.
+
+* I made a manual tweak to `typst.vim` to circumvent the SQL filetype problem.
+
 Telescope works better with these:
 
 * [fd](https://github.com/sharkdp/fd)
