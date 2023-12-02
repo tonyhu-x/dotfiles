@@ -42,4 +42,14 @@
         "command": "breadcrumbs.focusNext",
         "when": "breadcrumbsActive && breadcrumbsVisible && !inputFocus"
     },
+    // for macOS
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.files.save"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "-vscode-neovim.send",
+        "when": "editorTextFocus && neovim.ctrlKeysNormal.s && neovim.init && editorLangId not in 'neovim.editorLangIdExclusions'"
+    },
 ]
