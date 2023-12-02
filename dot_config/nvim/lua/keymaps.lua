@@ -15,7 +15,7 @@ keymap('t', '<C-\\><C-c>', '<C-c>', opts)
 -- telescope
 keymap('n', '<leader>f', require('telescope.builtin').live_grep, vim.tbl_extend('error', opts, { desc = 'Telescope: live grep' }))
 keymap('n', '<leader>b', require('telescope.builtin').buffers, vim.tbl_extend('error', opts, { desc = 'Telescope: open buffers' }))
-keymap('n', 'gf', require('telescope.builtin').find_files, vim.tbl_extend('error', opts, { desc = 'Telescope: find files' }))
+keymap('n', '<C-p>', require('telescope.builtin').find_files, vim.tbl_extend('error', opts, { desc = 'Telescope: find files' }))
 
 -- comment
 keymap('n', '<leader>cc', function()

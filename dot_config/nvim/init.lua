@@ -34,13 +34,13 @@ init_vscode = function()
     keymap({'n', 'v'}, 'gr', "<Cmd>call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>", opts)
     keymap({'n', 'v'}, 'gh', "<Cmd>call VSCodeNotify('editor.action.showHover')<CR>", opts)
     keymap({'n', 'v'}, 'go', "<Cmd>call VSCodeNotify('workbench.action.gotoSymbol')<CR>", opts)
-    keymap({'n', 'v'}, 'gf', "<Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>", opts)
+    -- keymap({'n', 'v'}, 'gf', "<Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>", opts)
     keymap({'n', 'v'}, 'ga', "<Cmd>call VSCodeNotify('breadcrumbs.focusAndSelect')<CR>", opts)
 
     keymap('n', '<leader>r', "<Cmd>call VSCodeNotify('editor.action.rename')<CR>", opts)
 
     HOME = os.getenv("HOME")
-     
+
     vim.opt.mouse = 'a'
     vim.opt.ignorecase = true
     vim.opt.smartcase = true
