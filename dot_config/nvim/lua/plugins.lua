@@ -110,6 +110,7 @@ return require('packer').startup(function(use)
 
     use {
         'L3MON4D3/LuaSnip',
+        'micangl/cmp-vimtex',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
@@ -123,7 +124,14 @@ return require('packer').startup(function(use)
         'kaarmu/typst.vim',
         ft = {'typst'},
         config = function ()
-            vim.cmd('let g:typst_pdf_viewer = "Preview"')
+            vim.cmd('let g:typst_pdf_viewer = "sioyek"')
+        end
+    }
+
+    use {
+        'lervag/vimtex',
+        config = function ()
+            vim.cmd('let g:vimtex_view_method = "sioyek"')
         end
     }
 

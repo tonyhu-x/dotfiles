@@ -3,6 +3,12 @@
 This is my dotfile repository. This file documents steps that need to be
 manually executed to finish setup.
 
+## Common
+
+These are apps that consume the managed configs:
+
+* [sioyek](http://sioyek.info)
+
 ## Neovim
 
 All Neovim plugins should now automatically install during first-time Neovim setup.
@@ -13,6 +19,8 @@ need to be added to `lsp.lua` list of configured servers.
 Neovim Typst support (obviously) requires Typst.
 
 * I made a manual tweak to `typst.vim` to circumvent the SQL filetype problem.
+
+VimTeX and Typst are configured to use sioyek as the PDF viewer.
 
 Telescope works better with these:
 

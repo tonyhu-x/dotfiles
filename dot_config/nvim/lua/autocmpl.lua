@@ -41,6 +41,12 @@ cmp.setup {
     ),
 }
 
+cmp.setup.filetype("tex", {
+    sources = {
+        { name = 'vimtex' },
+    },
+})
+
 cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
