@@ -13,6 +13,12 @@ keymap('i', '<C-c>', '<Esc>', opts)
 keymap('t', '<C-c>', '<C-\\><C-n>', opts)
 keymap('t', '<C-\\><C-c>', '<C-c>', opts)
 
+-- window management
+keymap('n', '<C-j>', '<C-w>j', opts)
+keymap('n', '<C-k>', '<C-w>k', opts)
+keymap('n', '<C-h>', '<C-w>h', opts)
+keymap('n', '<C-l>', '<C-w>l', opts)
+
 -- telescope
 keymap('n', '<leader>f', require('telescope.builtin').live_grep, vim.tbl_extend('error', opts, { desc = 'Telescope: live grep' }))
 keymap('n', '<leader>b', require('telescope.builtin').buffers, vim.tbl_extend('error', opts, { desc = 'Telescope: open buffers' }))
