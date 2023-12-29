@@ -22,7 +22,8 @@ vim.opt.wrap = false
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+-- this tells it to use same value as tabstop
+vim.opt.shiftwidth = 0
 
 vim.opt.scrolloff = 3
 vim.opt.sidescrolloff = 5
