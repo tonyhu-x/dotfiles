@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use 'sainnhe/gruvbox-material'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- lualine requires a patched font with icons
     -- we can find one from ryanoasis/nerd-fonts
