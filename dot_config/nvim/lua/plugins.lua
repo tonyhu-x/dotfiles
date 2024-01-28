@@ -132,6 +132,7 @@ return require('packer').startup(function(use)
     use {
         'lervag/vimtex',
         config = function ()
+            vim.cmd('let g:vimtex_complete_enabled = 0')
             vim.cmd('let g:vimtex_view_method = "sioyek"')
         end
     }

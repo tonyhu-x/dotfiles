@@ -32,6 +32,9 @@ lspconfig.typst_lsp.setup {
     }
 }
 lspconfig.tsserver.setup {}
+lspconfig.texlab.setup {
+    capabilities = cmp_capabilities,
+}
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
