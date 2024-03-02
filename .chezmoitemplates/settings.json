@@ -6,6 +6,7 @@
     "editor.smoothScrolling": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.accessibilitySupport": "off",
+    "editor.stickyScroll.enabled": false,
     "explorer.autoReveal": false,
     "explorer.sortOrder": "type",
     "window.autoDetectColorScheme": true,
