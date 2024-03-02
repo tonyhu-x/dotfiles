@@ -5,6 +5,7 @@
     "editor.fontFamily": "'CaskaydiaCove Nerd Font Mono', Consolas, 'Courier New', monospace",
     "editor.smoothScrolling": false,
     "editor.acceptSuggestionOnEnter": "off",
+    "editor.accessibilitySupport": "off",
     "explorer.autoReveal": false,
     "explorer.sortOrder": "type",
     "window.autoDetectColorScheme": true,
@@ -33,13 +34,25 @@
         "dollarmath",
         "colon_fence"
     ],
-    "html.autoClosingTags": false,
     "diffEditor.ignoreTrimWhitespace": false,
+
+    "github.copilot.editor.enableAutoCompletions": false,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+
+    // web dev
+    "html.autoClosingTags": false,
+    "javascript.autoClosingTags": false,
+    "typescript.autoClosingTags": false,
 
     // latex
     "[latex]": {
         "editor.formatOnPaste": false,
-        "editor.wordBasedSuggestions": false,
+        "editor.wordBasedSuggestions": "off",
         "editor.suggestSelection": "recentlyUsedByPrefix",
         "editor.tabSize": 2,
         "editor.autoClosingBrackets": "beforeWhitespace"
