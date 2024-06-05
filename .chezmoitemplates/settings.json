@@ -11,6 +11,7 @@
     "explorer.sortOrder": "type",
     "window.autoDetectColorScheme": true,
     "window.commandCenter": false,
+    "window.title": "${rootName}${separator}${activeEditorShort}${separator}${profileName}",
 
     "workbench.colorTheme": "Gruvbox Material Dark",
     "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
@@ -22,22 +23,19 @@
     "workbench.editor.enablePreviewFromCodeNavigation": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.navigationScope": "editorGroup",
-
+    "diffEditor.ignoreTrimWhitespace": false,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "git.inputValidation": true,
 
+    // VSCode Neovim
     "vscode-neovim.useWSL": true,
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "myst.preview.extensions": [
-        "dollarmath",
-        "colon_fence"
-    ],
-    "diffEditor.ignoreTrimWhitespace": false,
 
-    "github.copilot.editor.enableAutoCompletions": false,
+    // GitHub Copilot
     "github.copilot.enable": {
         "*": true,
         "plaintext": false,
@@ -45,10 +43,23 @@
         "scminput": false
     },
 
+    "cSpell.enabled": false,
+
     // web dev
     "html.autoClosingTags": false,
     "javascript.autoClosingTags": false,
     "typescript.autoClosingTags": false,
+    "eslint.experimental.useFlatConfig": true,
+    "eslint.format.enable": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
 
     // latex
     "[latex]": {
@@ -59,4 +70,9 @@
         "editor.autoClosingBrackets": "beforeWhitespace"
     },
     "latex-workshop.view.pdf.viewer": "tab",
+
+    "myst.preview.extensions": [
+        "dollarmath",
+        "colon_fence"
+    ],
 }
