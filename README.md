@@ -1,34 +1,38 @@
 # dotfiles
 
-This is my dotfile repository. This file documents steps that need to be
-manually executed to finish setup.
+This is my dotfile repository.
+This file documents steps that need to be manually executed to finish setup.
 
 ## Common
 
-These are apps that consume the managed configs:
+These are programs that consume the managed configs:
 
-* [sioyek](http://sioyek.info)
-
-## Neovim
-
-All Neovim plugins should now automatically install during first-time Neovim setup.
-
-LSP language servers can be managed through `:Mason`. After installation, they
-need to be added to `lsp.lua` list of configured servers.
-
-Neovim Typst support (obviously) requires Typst.
-
-* I made a manual tweak to `typst.vim` to circumvent the SQL filetype problem.
-
-VimTeX and Typst are configured to use sioyek as the PDF viewer.
-
-Telescope works better with these:
-
-* [fd](https://github.com/sharkdp/fd)
-* [ripgrep](https://github.com/BurntSushi/ripgrep)
+- Zsh
+- Neovim
+- [sioyek](http://sioyek.info)
+- VSCode
+- latexmk
 
 ## macOS
 
 These are macOS apps that consume the managed configs:
 
 * [Karabiner-Elements](https://karabiner-elements.pqrs.org)
+
+## Terminal
+
+Two important things to set up in a new terminal app:
+
+- Disable bell.
+- Download a [Nerd Font](https://www.nerdfonts.com/font-downloads).
+
+## Neovim
+
+I now use [LazyVim](lazyvim.org).
+Some external dependencies for it to work well are listed [here](http://www.lazyvim.org).
+
+Some language support requires the corresponding language to be installed.
+For example, Typst support needs the Typst compiler.
+
+VimTeX is configured to use sioyek as the PDF viewer.
+
