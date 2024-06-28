@@ -41,12 +41,12 @@ return {
                 },
                 line.wins_in_tab(tab.id).foreach(function(win)
                   return {
-                    line.sep("", theme.text, theme.bg),
+                    line.sep("", hl, theme.bg),
                     win.is_current() and "" or "",
                     win.buf_name(),
                     win.buf().is_changed() and "+",
-                    line.sep("", theme.text, theme.bg),
-                    hl = theme.text,
+                    line.sep("", hl, theme.bg),
+                    hl = hl,
                     margin = " ",
                   }
                 end),

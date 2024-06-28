@@ -15,6 +15,9 @@ keymap("t", "<C-\\><C-c>", "<C-c>", opts)
 keymap("n", "<S-l>", "gt", opts)
 keymap("n", "<S-h>", "gT", opts)
 
+vim.keymap.del("v", "<")
+vim.keymap.del("v", ">")
+
 if vim.g.vscode then
   keymap("", "<leader>e", "<Cmd>call VSCodeNotify('workbench.view.explorer')<CR>", opts)
   keymap("", "<leader>E", "<Cmd>call VSCodeNotify('workbench.files.action.showActiveFileInExplorer')<CR>", opts)

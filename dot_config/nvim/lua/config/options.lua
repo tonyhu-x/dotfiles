@@ -3,3 +3,5 @@
 -- Add any additional options here
 vim.g.maplocalleader = "<S-Space>"
 vim.o.showtabline = 2
+-- do NOT sync with system clipboard, thanks
+vim.o.clipboard = ""

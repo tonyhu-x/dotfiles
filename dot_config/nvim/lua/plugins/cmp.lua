@@ -7,6 +7,7 @@ return {
   ---@param opts cmp.ConfigSchema
   opts = function(_, opts)
     local cmp = require("cmp")
+    opts.experimental.ghost_text = false
 
     opts.mapping = cmp.mapping.preset.insert({
       ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
