@@ -18,7 +18,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Switch Cmd and Ctrl in certain apps",
+                        "description": "Elevate left_control/escape in certain apps",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -42,7 +42,13 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_control"
+                                        "key_code": "left_control",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
@@ -70,6 +76,33 @@
                                 "to": [
                                     {
                                         "key_code": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Make left_command send escape if pressed alone in all apps",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
@@ -176,7 +209,7 @@
                         ]
                     },
                     {
-                        "description": "Switch Cmd and Opt for word editing",
+                        "description": "Switch command and option for word editing",
                         "manipulators": [
                             {
                                 "from": {
@@ -724,7 +757,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Switch Cmd and Ctrl in certain apps",
+                        "description": "Elevate left_control/escape in certain apps",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -748,7 +781,13 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_control"
+                                        "key_code": "left_control",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
@@ -776,6 +815,33 @@
                                 "to": [
                                     {
                                         "key_code": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Make left_command send escape if pressed alone in all apps",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
@@ -882,7 +948,7 @@
                         ]
                     },
                     {
-                        "description": "Switch Cmd and Opt for word editing",
+                        "description": "Switch command and option for word editing",
                         "manipulators": [
                             {
                                 "from": {
