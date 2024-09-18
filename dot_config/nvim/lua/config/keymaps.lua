@@ -7,7 +7,7 @@ local keymap = vim.keymap.set
 keymap("", "`", "'", opts)
 keymap("", "'", "`", opts)
 
-keymap("i", "<C-c>", "<Esc>", opts)
+keymap({ "i", "v" }, "<C-c>", "<Esc>", opts)
 
 keymap("t", "<C-c>", "<C-\\><C-n>", opts)
 keymap("t", "<C-\\><C-c>", "<C-c>", opts)
