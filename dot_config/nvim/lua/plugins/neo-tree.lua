@@ -9,9 +9,9 @@ return {
     {
       "<leader>E",
       function()
-        require("neo-tree.command").execute({ toggle = true, reveal = true })
+        require("neo-tree.command").execute({ reveal = true })
       end,
-      desc = "Explorer NeoTree (Root Dir)",
+      desc = "Reveal in NeoTree",
     },
   },
 }
