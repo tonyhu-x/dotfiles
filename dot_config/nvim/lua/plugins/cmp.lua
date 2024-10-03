@@ -19,7 +19,20 @@ return {
       ["<C-d>"] = cmp.mapping.scroll_docs(4),
       ["<C-Space>"] = cmp.mapping.complete(),
       ["<C-e>"] = cmp.mapping.abort(),
-      ["<Tab>"] = LazyVim.cmp.confirm(),
+      ["<Tab>"] = function(fallback)
+        -- copied from LazyVim's cmp.lua, adapted for copilot
+        if cmp.core.view:visible() or vim.fn.pumvisible() == 1 then
+          LazyVim.create_undo()
+          if cmp.confirm(opts) then
+            return
+          end
+        elseif require("copilot.suggestion").is_visible() then
+          require("copilot.suggestion").accept()
+          return
+        else
+          return fallback()
+        end
+      end,
     })
 
     cmp.setup.cmdline({ "/", "?" }, {
