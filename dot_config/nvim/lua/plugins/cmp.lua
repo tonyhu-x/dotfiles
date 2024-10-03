@@ -1,5 +1,8 @@
 return {
   "hrsh7th/nvim-cmp",
+  -- change this from "InsertEnter" because we want command line completion even
+  -- if we don't have a buffer yet
+  event = "VeryLazy",
   dependencies = {
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-path",
