@@ -17,22 +17,17 @@ return {
       ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
       ["<C-u>"] = cmp.mapping.scroll_docs(-4),
       ["<C-d>"] = cmp.mapping.scroll_docs(4),
-      ["<C-Space>"] = cmp.mapping.complete(),
-      ["<C-e>"] = cmp.mapping.abort(),
-      ["<Tab>"] = function(fallback)
-        -- copied from LazyVim's cmp.lua, adapted for copilot
-        if cmp.core.view:visible() or vim.fn.pumvisible() == 1 then
-          LazyVim.create_undo()
-          if cmp.confirm(opts) then
-            return
-          end
-        elseif require("copilot.suggestion").is_visible() then
-          require("copilot.suggestion").accept()
+      ["<C-Space>"] = function(_)
+        local copilot_suggestion = require("copilot.suggestion")
+        if copilot_suggestion.is_visible() then
+          copilot_suggestion.accept()
           return
         else
-          return fallback()
+          cmp.complete()
         end
       end,
+      ["<C-e>"] = cmp.mapping.abort(),
+      ["<Tab>"] = LazyVim.cmp.confirm(),
     })
 
     cmp.setup.cmdline({ "/", "?" }, {
