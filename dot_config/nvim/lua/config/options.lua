@@ -5,3 +5,6 @@ vim.g.maplocalleader = "<S-Space>"
 vim.o.showtabline = 2
 -- do NOT sync with system clipboard, thanks
 vim.o.clipboard = ""
+
+-- disable animations
+vim.g.snacks_animate = false
