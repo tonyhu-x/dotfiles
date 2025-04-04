@@ -1,0 +1,82 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-s": "workspace::Save",
+      "cmd-shift-b": "workspace::ToggleRightDock",
+      "cmd-1": null,
+      "cmd-2": null,
+      "cmd-3": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-space": "editor::ShowCompletions"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "enter": "editor::Newline"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "tab": null,
+      "ctrl-space": "editor::AcceptEditPrediction"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction_conflict",
+    "bindings": {
+      "alt-tab": null,
+      "ctrl-cmd-space": "editor::AcceptEditPrediction"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-1": ["pane::ActivateItem", 0],
+      "cmd-2": ["pane::ActivateItem", 1],
+      "cmd-3": ["pane::ActivateItem", 2]
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "g r": "editor::FindAllReferences",
+      "g o": "outline::Toggle",
+      "g shift-o": "project_symbols::Toggle",
+      "'": ["vim::PushJump", { "line": false }],
+      "`": ["vim::PushJump", { "line": true }],
+      "space e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Dock || Terminal || GitPanel || ProjectPanel || CollabPanel || OutlinePanel || ChatPanel || VimControl || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward"
+    }
+  }
+]
