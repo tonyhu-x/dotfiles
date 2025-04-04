@@ -28,7 +28,7 @@
                                 "to": [
                                     {
                                         "key_code": "left_control",
-                                        "lazy": true
+                                        "lazy": false
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "escape" }],
@@ -67,7 +67,7 @@
                                 "to": [
                                     {
                                         "key_code": "left_command",
-                                        "lazy": true
+                                        "lazy": false
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "escape" }],
