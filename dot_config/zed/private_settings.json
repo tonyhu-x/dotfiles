@@ -7,6 +7,47 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "profiles": {
+      "write": {
+        "name": "Write",
+        "tools": {
+          "copy_path": true,
+          "create_directory": true,
+          "delete_path": true,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "list_directory": true,
+          "project_notifications": false,
+          "move_path": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "grep": true,
+          "terminal": true,
+          "thinking": true,
+          "web_search": true
+        },
+        "enable_all_context_servers": true,
+        "context_servers": {}
+      }
+    },
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    },
+    "model_parameters": [],
+    "default_profile": "write"
+  },
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_text_threads": false
+  },
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -17,11 +58,23 @@
     "light": "One Light",
     "dark": "Gruvbox Material"
   },
-  "buffer_font_size": 14,
+  "buffer_font_size": null,
   "cursor_blink": false,
   "vim": {
     "use_system_clipboard": "never",
     "toggle_relative_line_numbers": true
   },
-  "max_tabs": 3
+  "max_tabs": 3,
+  "use_smartcase_search": true,
+  "languages": {
+    "Swift": {
+      "formatter": {
+        "external": {
+          "command": "swift",
+          "arguments": ["format", "-"]
+        }
+      },
+      "format_on_save": "on"
+    }
+  }
 }

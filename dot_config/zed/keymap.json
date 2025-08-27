@@ -19,7 +19,7 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-shift-space": "editor::ShowCompletions"
+      "ctrl-alt-space": "editor::ShowCompletions"
     }
   },
   {
@@ -31,7 +31,7 @@
   {
     "context": "Editor && edit_prediction",
     "bindings": {
-      "tab": null,
+      "tab": "editor::Tab",
       "ctrl-space": "editor::AcceptEditPrediction"
     }
   },
@@ -39,7 +39,7 @@
     "context": "Editor && edit_prediction_conflict",
     "bindings": {
       "alt-tab": null,
-      "ctrl-cmd-space": "editor::AcceptEditPrediction"
+      "ctrl-alt-space": "editor::AcceptEditPrediction"
     }
   },
   {
@@ -77,6 +77,12 @@
     "bindings": {
       "s": "vim::PushSneak",
       "shift-s": "vim::PushSneakBackward"
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "ctrl-s": "workspace::Save"
     }
   }
 ]
