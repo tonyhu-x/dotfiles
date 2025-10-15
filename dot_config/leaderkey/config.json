@@ -1,0 +1,55 @@
+{
+  "actions" : [
+    {
+      "key" : "t",
+      "type" : "application",
+      "value" : "/System/Applications/Utilities/Terminal.app"
+    },
+    {
+      "key" : "a",
+      "type" : "application",
+      "value" : "/System/Applications/Calendar.app"
+    },
+    {
+      "key" : "u",
+      "type" : "application",
+      "value" : "/System/Applications/Reminders.app"
+    },
+    {
+      "key" : "d",
+      "type" : "application",
+      "value" : "/Applications/Discord.app"
+    },
+    {
+      "key" : "w",
+      "type" : "application",
+      "value" : "/Applications/WhatsApp.app"
+    },
+    {
+      "key" : "m",
+      "type" : "application",
+      "value" : "/System/Applications/Music.app"
+    },
+    {
+      "key" : "g",
+      "type" : "application",
+      "value" : "/System/Applications/Dictionary.app"
+    },
+    {
+      "key" : "s",
+      "type" : "application",
+      "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
+    },
+    {
+      "key" : "o",
+      "type" : "application",
+      "value" : "/Applications/Obsidian.app"
+    },
+    {
+      "key" : "r",
+      "type" : "application",
+      "value" : "/Applications/Zotero.app"
+    }
+  ],
+  "type" : "group"
+}
