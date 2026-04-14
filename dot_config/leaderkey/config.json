@@ -1,14 +1,14 @@
 {
   "actions" : [
     {
-      "key" : "t",
-      "type" : "application",
-      "value" : "/System/Applications/Utilities/Terminal.app"
-    },
-    {
       "key" : "a",
       "type" : "application",
       "value" : "/System/Applications/Calendar.app"
+    },
+    {
+      "key" : "t",
+      "type" : "application",
+      "value" : "/Applications/iTerm.app"
     },
     {
       "key" : "u",
@@ -49,6 +49,43 @@
       "key" : "r",
       "type" : "application",
       "value" : "/Applications/Zotero.app"
+    },
+    {
+      "key" : "n",
+      "type" : "application",
+      "value" : "/Applications/Notion.app"
+    },
+    {
+      "key" : "z",
+      "type" : "application",
+      "value" : "/Applications/Zed.app"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "d",
+          "type" : "folder",
+          "value" : "/Users/tonyx/Downloads"
+        },
+        {
+          "key" : "m",
+          "type" : "application",
+          "value" : "/System/Applications/Messages.app"
+        },
+        {
+          "key" : "l",
+          "type" : "url",
+          "value" : "https://mcgill.ca/libraries/"
+        },
+        {
+          "key" : "r",
+          "type" : "application",
+          "value" : "/Applications/reMarkable.app"
+        }
+      ],
+      "key" : "space",
+      "label" : "⭐",
+      "type" : "group"
     }
   ],
   "type" : "group"

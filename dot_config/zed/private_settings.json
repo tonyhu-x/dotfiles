@@ -7,62 +7,51 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "agent": {
-    "profiles": {
-      "write": {
-        "name": "Write",
-        "tools": {
-          "copy_path": true,
-          "create_directory": true,
-          "delete_path": true,
-          "diagnostics": true,
-          "edit_file": true,
-          "fetch": true,
-          "list_directory": true,
-          "project_notifications": false,
-          "move_path": true,
-          "now": true,
-          "find_path": true,
-          "read_file": true,
-          "grep": true,
-          "terminal": true,
-          "thinking": true,
-          "web_search": true
-        },
-        "enable_all_context_servers": true,
-        "context_servers": {}
-      }
+  "git_panel": {
+    "tree_view": false,
+  },
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
     },
+    "github-copilot": {
+      "type": "registry",
+    },
+  },
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini",
+    },
+    "default_profile": "write",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "enable_thinking": false,
+      "provider": "openrouter",
+      "model": "openai/gpt-5.2-codex",
     },
     "model_parameters": [],
-    "default_profile": "write"
   },
   "edit_predictions": {
-    "mode": "subtle",
+    "provider": "zed",
+    "mode": "eager",
     "copilot": {
       "proxy": null,
-      "proxy_no_verify": null
+      "proxy_no_verify": null,
     },
-    "enabled_in_text_threads": false
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
+    "enabled_in_text_threads": false,
   },
   "base_keymap": "VSCode",
   "vim_mode": true,
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Material"
+    "dark": "Gruvbox Material",
   },
   "buffer_font_size": null,
   "cursor_blink": false,
   "vim": {
     "use_system_clipboard": "never",
-    "toggle_relative_line_numbers": true
+    "toggle_relative_line_numbers": true,
   },
   "max_tabs": 3,
   "use_smartcase_search": true,
@@ -71,10 +60,10 @@
       "formatter": {
         "external": {
           "command": "swift",
-          "arguments": ["format", "-"]
-        }
+          "arguments": ["format", "-"],
+        },
       },
-      "format_on_save": "on"
-    }
-  }
+      "format_on_save": "on",
+    },
+  },
 }

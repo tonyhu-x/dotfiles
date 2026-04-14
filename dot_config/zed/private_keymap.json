@@ -13,42 +13,38 @@
       "cmd-shift-b": "workspace::ToggleRightDock",
       "cmd-1": null,
       "cmd-2": null,
-      "cmd-3": null
-    }
+      "cmd-3": null,
+    },
   },
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-alt-space": "editor::ShowCompletions"
-    }
+      "ctrl-alt-space": "editor::ShowCompletions",
+    },
   },
   {
     "context": "Editor && showing_completions",
     "bindings": {
-      "enter": "editor::Newline"
-    }
+      "enter": "editor::Newline",
+    },
   },
   {
     "context": "Editor && edit_prediction",
     "bindings": {
-      "tab": "editor::Tab",
-      "ctrl-space": "editor::AcceptEditPrediction"
-    }
-  },
-  {
-    "context": "Editor && edit_prediction_conflict",
-    "bindings": {
-      "alt-tab": null,
-      "ctrl-alt-space": "editor::AcceptEditPrediction"
-    }
+      "ctrl-alt-space": "editor::AcceptEditPrediction",
+    },
+    "unbind": {
+      "alt-tab": "editor::AcceptEditPrediction",
+      "tab": "editor::AcceptEditPrediction",
+    },
   },
   {
     "context": "Pane",
     "bindings": {
       "cmd-1": ["pane::ActivateItem", 0],
       "cmd-2": ["pane::ActivateItem", 1],
-      "cmd-3": ["pane::ActivateItem", 2]
-    }
+      "cmd-3": ["pane::ActivateItem", 2],
+    },
   },
   {
     "context": "VimControl && !menu",
@@ -60,8 +56,8 @@
       "g shift-o": "project_symbols::Toggle",
       "'": ["vim::PushJump", { "line": false }],
       "`": ["vim::PushJump", { "line": true }],
-      "space e": "project_panel::ToggleFocus"
-    }
+      "space e": "project_panel::ToggleFocus",
+    },
   },
   {
     "context": "Dock || Terminal || GitPanel || ProjectPanel || CollabPanel || OutlinePanel || ChatPanel || VimControl || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
@@ -69,20 +65,20 @@
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
-    }
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
   },
   {
     "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
       "s": "vim::PushSneak",
-      "shift-s": "vim::PushSneakBackward"
-    }
+      "shift-s": "vim::PushSneakBackward",
+    },
   },
   {
     "context": "vim_mode == insert",
     "bindings": {
-      "ctrl-s": "workspace::Save"
-    }
-  }
+      "ctrl-s": "workspace::Save",
+    },
+  },
 ]
