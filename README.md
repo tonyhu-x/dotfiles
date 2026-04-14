@@ -11,13 +11,16 @@ These are programs that consume the managed configs:
 - Neovim
 - [sioyek](http://sioyek.info)
 - VSCode
+- Zed
 - latexmk
 
 ## macOS
 
 These are macOS apps that consume the managed configs:
 
-* [Karabiner-Elements](https://karabiner-elements.pqrs.org)
+- [Karabiner-Elements](https://karabiner-elements.pqrs.org)
+- [Raycast](https://www.raycast.com)
+- [LeaderKey](https://github.com/mikker/LeaderKey)
 
 ## Terminal
 
@@ -35,4 +38,3 @@ Some language support requires the corresponding language to be installed.
 For example, Typst support needs the Typst compiler.
 
 VimTeX is configured to use sioyek as the PDF viewer.
-
