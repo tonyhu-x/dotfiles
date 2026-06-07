@@ -7,18 +7,39 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
+    "unbind": {
+      "cmd-j": "workspace::ToggleBottomDock",
+      "ctrl-h": "editor::Backspace",
+    },
     "bindings": {
-      "ctrl-s": "workspace::Save",
-      "cmd-shift-b": "workspace::ToggleRightDock",
-      "cmd-1": null,
-      "cmd-2": null,
-      "cmd-3": null,
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "cmd-j g": "git_panel::Toggle", // Not cmd-g because g is far from right cmd
+      "cmd-j cmd-e": "project_panel::Toggle",
+      "cmd-j cmd-o": "outline_panel::Toggle",
+      "cmd-j cmd-n": "multi_workspace::ToggleWorkspaceSidebar",
+      "cmd-j cmd-a": "agent::Toggle",
+      "cmd-j cmd-t": "terminal_panel::Toggle",
+      "cmd-j d": "debug_panel::Toggle",
+      "cmd-j cmd-h": "workspace::ToggleLeftDock",
+      "cmd-j cmd-l": "workspace::ToggleRightDock",
+      "cmd-j cmd-j": "workspace::ToggleBottomDock",
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-1": ["pane::ActivateItem", 0],
+      "cmd-2": ["pane::ActivateItem", 1],
+      "cmd-3": ["pane::ActivateItem", 2],
     },
   },
   {
     "context": "Editor",
     "bindings": {
+      "ctrl-s": "workspace::Save",
       "ctrl-alt-space": "editor::ShowCompletions",
     },
   },
@@ -39,36 +60,6 @@
     },
   },
   {
-    "context": "Pane",
-    "bindings": {
-      "cmd-1": ["pane::ActivateItem", 0],
-      "cmd-2": ["pane::ActivateItem", 1],
-      "cmd-3": ["pane::ActivateItem", 2],
-    },
-  },
-  {
-    "context": "VimControl && !menu",
-    "bindings": {
-      "shift-h": "pane::ActivatePreviousItem",
-      "shift-l": "pane::ActivateNextItem",
-      "g r": "editor::FindAllReferences",
-      "g o": "outline::Toggle",
-      "g shift-o": "project_symbols::Toggle",
-      "'": ["vim::PushJump", { "line": false }],
-      "`": ["vim::PushJump", { "line": true }],
-      "space e": "project_panel::ToggleFocus",
-    },
-  },
-  {
-    "context": "Dock || Terminal || GitPanel || ProjectPanel || CollabPanel || OutlinePanel || ChatPanel || VimControl || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
-    "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown",
-    },
-  },
-  {
     "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
       "s": "vim::PushSneak",
@@ -77,8 +68,19 @@
   },
   {
     "context": "vim_mode == insert",
+    "unbind": {
+      "ctrl-s": "editor::ShowSignatureHelp"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
     "bindings": {
-      "ctrl-s": "workspace::Save",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "g r": "editor::FindAllReferences",
+      "g o": "outline::Toggle",
+      "'": ["vim::PushJump", { "line": false }],
+      "`": ["vim::PushJump", { "line": true }],
     },
   },
 ]
