@@ -1,0 +1,23 @@
+{
+  "env": {
+    "MAX_THINKING_TOKENS": "10000",
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50"
+  },
+  "model": "sonnet",
+  "enabledPlugins": {
+    "ecc@ecc": false
+  },
+  "extraKnownMarketplaces": {
+    "ecc": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/affaan-m/ECC.git"
+      }
+    }
+  },
+  "theme": "auto",
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/tonyx/.claude/statusline-command.sh"
+  }
+}
