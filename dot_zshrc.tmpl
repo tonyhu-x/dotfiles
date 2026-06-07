@@ -76,7 +76,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
 
 setopt extendedglob nomatch
 bindkey -e
@@ -85,27 +84,12 @@ bindkey -e
 bindkey '^ ' autosuggest-accept
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-# Env variables
-export REPO_URL=ssh://gerritgit/amd/ec/ext/google/repo
-export ARTKEYPATH=~/.ssh/id_rsa.pub
-export ARTUSERNAME=tonyhu12
-{{ if eq .chezmoi.os "darwin" }}
-export EDITOR=/opt/homebrew/bin/nvim
-{{ else }}
-export EDITOR=/usr/local/bin/nvim
-{{ end }}
+export EDITOR=/usr/local/bin/zed
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -128,7 +112,3 @@ alias pip=pip3
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
