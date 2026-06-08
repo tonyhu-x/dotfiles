@@ -23,6 +23,7 @@
       "cmd-j cmd-a": "agent::Toggle",
       "cmd-j cmd-t": "terminal_panel::Toggle",
       "cmd-j d": "debug_panel::Toggle",
+      "cmd-j cmd-s": "diagnostics::Deploy",
       "cmd-j cmd-h": "workspace::ToggleLeftDock",
       "cmd-j cmd-l": "workspace::ToggleRightDock",
       "cmd-j cmd-j": "workspace::ToggleBottomDock",
