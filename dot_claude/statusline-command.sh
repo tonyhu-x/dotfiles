@@ -9,7 +9,7 @@ used=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 
 # Show last 3 path components (like avit's %3~), replacing $HOME with ~
 home="$HOME"
-short_path="${cwd/#$home/\~}"
+short_path="${cwd/#$home/~}"
 # Keep only last 3 components
 short_path=$(echo "$short_path" | awk -F'/' '{
   n=NF
