@@ -70,8 +70,8 @@
   {
     "context": "vim_mode == insert",
     "unbind": {
-      "ctrl-s": "editor::ShowSignatureHelp"
-    }
+      "ctrl-s": "editor::ShowSignatureHelp",
+    },
   },
   {
     "context": "VimControl && !menu",
@@ -80,6 +80,7 @@
       "shift-l": "pane::ActivateNextItem",
       "g r": "editor::FindAllReferences",
       "g o": "outline::Toggle",
+      "g shift-o": "project_symbols::Toggle",
       "'": ["vim::PushJump", { "line": false }],
       "`": ["vim::PushJump", { "line": true }],
     },
