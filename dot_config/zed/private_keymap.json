@@ -39,6 +39,9 @@
   },
   {
     "context": "Editor",
+    "unbind": {
+      "ctrl-t": "editor::Transpose",
+    },
     "bindings": {
       "ctrl-s": "workspace::Save",
       "ctrl-alt-space": "editor::ShowCompletions",
@@ -58,6 +61,18 @@
     "unbind": {
       "alt-tab": "editor::AcceptEditPrediction",
       "tab": "editor::AcceptEditPrediction",
+    },
+  },
+  {
+    "context": "Picker && with_preview > Editor",
+    "bindings": {
+      "ctrl-o": "picker::TogglePreview",
+    },
+  },
+  {
+    "context": "TextFinder",
+    "bindings": {
+      "ctrl-t": "text_finder::ToProjectSearch",
     },
   },
   {
@@ -83,6 +98,7 @@
       "g shift-o": "project_symbols::Toggle",
       "'": ["vim::PushJump", { "line": false }],
       "`": ["vim::PushJump", { "line": true }],
+      "?": "text_finder::Toggle",
     },
   },
 ]
