@@ -61,6 +61,18 @@
     },
   },
   {
+    "context": "Picker && with_preview > Editor",
+    "bindings": {
+      "ctrl-o": "picker::TogglePreview",
+    },
+  },
+  {
+    "context": "TextFinder",
+    "bindings": {
+      "ctrl-t": "text_finder::ToProjectSearch",
+    },
+  },
+  {
     "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
       "s": "vim::PushSneak",
@@ -83,6 +95,7 @@
       "g shift-o": "project_symbols::Toggle",
       "'": ["vim::PushJump", { "line": false }],
       "`": ["vim::PushJump", { "line": true }],
+      "?": "text_finder::Toggle",
     },
   },
 ]
