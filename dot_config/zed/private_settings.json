@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "format_on_save": "on",
   "preview_tabs": {
     "enable_keep_preview_on_code_navigation": true,
     "enable_preview_multibuffer_from_code_navigation": true,
@@ -57,7 +58,7 @@
     "model_parameters": [],
   },
   "edit_predictions": {
-    "provider": "copilot",
+    "provider": "zed",
     "mode": "eager",
   },
   "base_keymap": "VSCode",
