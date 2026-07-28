@@ -56,7 +56,7 @@
       "value" : "/Applications/Notion.app"
     },
     {
-      "key" : "z",
+      "key" : "c",
       "type" : "application",
       "value" : "/Applications/Zed.app"
     },
@@ -81,6 +81,11 @@
           "key" : "r",
           "type" : "application",
           "value" : "/Applications/reMarkable.app"
+        },
+        {
+          "key" : "s",
+          "type" : "application",
+          "value" : "/Applications/Slack.app"
         }
       ],
       "key" : "space",
