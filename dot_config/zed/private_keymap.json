@@ -105,6 +105,8 @@
       "'": ["vim::PushJump", { "line": false }],
       "`": ["vim::PushJump", { "line": true }],
       "?": "text_finder::Toggle",
+      "space r": "editor::Rename",
+      "space p": "pane::TogglePreviewTab",
     },
   },
 ]
