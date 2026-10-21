@@ -13,6 +13,7 @@ These are programs that consume the managed configs:
 - VSCode
 - Zed
 - latexmk
+- Claude Code
 
 ## macOS
 

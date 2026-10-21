@@ -1,0 +1,7 @@
+[package]
+name = "claude-report"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Tony"]
+description = "Simple report template for documents drafted by Claude, with TODO marks and Tony's own comments."
+compiler = "0.15.0"
