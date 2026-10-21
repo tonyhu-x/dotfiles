@@ -38,6 +38,10 @@
     "enable_preview_multibuffer_from_code_navigation": true,
     "enable_preview_from_file_finder": true,
   },
+  "status_bar": {
+    "line_endings_button": true,
+    "active_encoding_button": "enabled",
+  },
   "cli_default_open_behavior": "existing_window",
   "edit_predictions": {
     "provider": "zed",
@@ -49,8 +53,8 @@
     "profiles": {},
     "show_turn_stats": false,
     "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini",
+      "provider": "zed.dev",
+      "model": "claude-sonnet-5",
     },
     "default_profile": "ask",
     "default_model": {
@@ -64,6 +68,7 @@
   "cursor_blink": false,
   "vim_mode": true,
   "vim": {
+    "show_edit_predictions_in_normal_mode": true,
     "use_system_clipboard": "never",
     "toggle_relative_line_numbers": true,
   },
@@ -86,7 +91,7 @@
         // Server will be running on 127.0.0.1:23635
         "preview": {
           "background": {
-            "enabled": true,
+            "enabled": false,
           },
         },
       },
