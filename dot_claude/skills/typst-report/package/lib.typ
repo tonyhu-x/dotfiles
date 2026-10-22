@@ -160,7 +160,7 @@
       let n = query(<claude-report-todo>).len()
       if n > 0 {
         sep
-        text(fill: todo-colour)[#n open #smallcaps(all: true)[Todo]#if n > 1 [s]]
+        text(fill: todo-colour)[#n #smallcaps(all: true)[Todo]#if n > 1 [s]]
       }
     }
   }))
