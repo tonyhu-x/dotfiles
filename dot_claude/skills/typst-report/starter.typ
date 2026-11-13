@@ -3,7 +3,7 @@
 #show: report.with(
   title: [Title of the report],
   // subtitle: [Optional subtitle],
-  // authors: ("Claude",),
+  // authors: ("Claude",),  // only set to show authors on the page
   // date: datetime.today(),
   // meta: ("Course": [LING 330], "Status": [Draft]),
   // abstract: [One-paragraph summary.],

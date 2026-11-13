@@ -34,19 +34,24 @@ If `@local/report` can't be found, run `~/.claude/skills/typst-report/install.sh
 #show: report.with(
   title: [Title],                       // required in practice
   subtitle: none,                       // content
-  authors: ("Claude",),                 // strings; PDF metadata only, not shown
+  authors: auto,                        // strings; see below
   date: datetime.today(),               // datetime, content, or none
   meta: ("Course": [LING 330]),         // extra "Key: value" fields in the header line
   abstract: none,                       // content
   toc: false,                           // table of contents after the header
   heading-numbering: "1.1",             // none to switch off numbering
-  provenance: true,                     // never set false yourself (see below)
+  produced-by-claude: true,             // never set false yourself (see below)
 )
 ```
 
-The header shows the title, a status line (date, `meta` fields, and the number of open TODOs) and a fixed provenance line explaining that Claude wrote the document except for Tony's marked parts, and how those parts and TODOs look. Don't write a separate disclaimer.
+The header shows the title, a status line (authors when shown, date, `meta` fields, and the number of open TODOs) and a fixed provenance line explaining that Claude wrote the document except for Tony's marked parts, and how those parts and TODOs look. Don't write a separate disclaimer.
 
-`provenance: false` hides the provenance line. It exists for documents Tony writes himself with this template. In any document Claude writes or edits content in, leave it on, and never switch it off unless Tony explicitly asks for that specific document. If Tony asks you to add content to a document that already has it off, say that nothing will show your additions as Claude's and ask whether to turn it back on.
+`produced-by-claude` controls the provenance line and the default authors:
+
+- `true` (default): the provenance line is shown, and `authors` defaults to Claude. Default authors are kept out of the status line and only go into the PDF metadata; authors you set explicitly are shown.
+- `false`: no provenance line, and `authors` defaults to Tony Juntao Hu. Authors are always shown.
+
+`false` exists for documents Tony writes himself with this template. In any document Claude writes or edits content in, leave it on, and never switch it off unless Tony explicitly asks for that specific document. If Tony asks you to add content to a document that already has it off, say that nothing will show your additions as Claude's and ask whether to turn it back on.
 
 | Function | Use |
 | --- | --- |

@@ -5,6 +5,7 @@
 //   #show: report.with(title: [My report])
 
 #let me-name = "Tony"
+#let me-full-name = "Tony Juntao Hu"
 
 // Colours. Marked content uses a light `tint` of its colour as background;
 // inline marks also darken the text by `shade`.
@@ -98,16 +99,21 @@
 #let report(
   title: none,
   subtitle: none,
-  authors: ("Claude",),
+  authors: auto,
   date: datetime.today(),
   meta: (:),
   abstract: none,
   toc: false,
   heading-numbering: "1.1",
-  provenance: true,
+  produced-by-claude: true,
   body,
 ) = {
-  let authors = if type(authors) == array { authors } else { (authors,) }
+  // Claude's documents credit Claude but only show authors when they are given
+  // explicitly; Tony's own documents always show them.
+  let show-authors = not produced-by-claude or authors != auto
+  let authors = if authors == auto {
+    if produced-by-claude { ("Claude",) } else { (me-full-name,) }
+  } else if authors == none { () } else if type(authors) == array { authors } else { (authors,) }
   set document(
     title: title,
     author: authors.filter(a => type(a) == str),
@@ -148,43 +154,45 @@
   if subtitle != none {
     block(above: 0pt, below: gap, text(size: 1.3em, fill: muted, subtitle))
   }
-  // Status line. Authors only go into the PDF metadata.
+  // Status line.
   let fields = ()
+  if show-authors and authors.len() > 0 { fields.push(authors.join(", ")) }
   if date != none {
     fields.push(if type(date) == datetime { date.display("[month repr:long] [day], [year]") } else { date })
   }
   for (key, value) in meta { fields.push([#key: #value]) }
   let sep = h(0.5em) + sym.dot.c + h(0.5em)
-  block(text(fill: muted, {
-    fields.join(sep)
-    context {
-      let n = query(<report-todo>).len()
-      if n > 0 {
-        sep
-        text(fill: todo-colour)[#n #smallcaps(all: true)[Todo]#if n > 1 [s]]
-      }
-    }
-  }))
 
-  // Provenance line. Turn it off for documents Tony writes.
-  if provenance {
-    block(
-      above: 1.5 * gap,
-      below: 2 * gap,
-      width: 100%,
-      inset: (y: pad),
-      stroke: (y: rule),
-      text(size: 0.9em, fill: muted)[
-        This document was produced by Claude, except for parts marked as written by #me-name.
-        #me-name's additions appear in a purple block labelled “#_label(me-colour, me-name)” or,
-        within a sentence, as #_inline-mark(me-colour)[purple highlighted text]. Orange blocks
-        with a dashed bar labelled “#_label(todo-colour)[Todo]”, and inline
-        #_inline-mark(todo-colour)[#smallcaps(all: true)[Todo]: …] marks, are open items or notes
-        from Claude.
-      ],
-    )
-  } else {
-    v(gap)
+  // The TODO count needs context, so the rest of the header is built inside it.
+  // Each part is only added when there is something to show, so a document
+  // without header content starts at the top of the page like plain Typst.
+  context {
+    let status = fields
+    let n = query(<report-todo>).len()
+    if n > 0 { status.push(text(fill: todo-colour)[#n #smallcaps(all: true)[Todo]#if n > 1 [s]]) }
+    if status.len() > 0 { block(text(fill: muted, status.join(sep))) }
+    let has-header = title != none or subtitle != none or status.len() > 0
+
+    // Provenance line, only for documents Claude produced.
+    if produced-by-claude {
+      block(
+        above: 1.5 * gap,
+        below: 2 * gap,
+        width: 100%,
+        inset: (y: pad),
+        stroke: (y: rule),
+        text(size: 0.9em, fill: muted)[
+          This document was produced by Claude, except for parts marked as written by #me-name.
+          #me-name's additions appear in a purple block labelled “#_label(me-colour, me-name)” or,
+          within a sentence, as #_inline-mark(me-colour)[purple highlighted text]. Orange blocks
+          with a dashed bar labelled “#_label(todo-colour)[Todo]”, and inline
+          #_inline-mark(todo-colour)[#smallcaps(all: true)[Todo]: …] marks, are open items or notes
+          from Claude.
+        ],
+      )
+    } else if has-header {
+      v(gap)
+    }
   }
 
   if abstract != none {
