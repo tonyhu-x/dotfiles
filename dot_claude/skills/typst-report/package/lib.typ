@@ -1,7 +1,7 @@
-// claude-report: a simple report template for documents drafted by Claude.
+// report: a simple report template with TODO marks and Tony's own comments.
 //
 // Usage:
-//   #import "@local/claude-report:0.1.0": *
+//   #import "@local/report:0.1.0": *
 //   #show: report.with(title: [My report])
 
 #let me-name = "Tony"
@@ -56,7 +56,7 @@
 /// An open item for Claude to improve, or a note from Claude to Tony.
 /// Use `inline: true` inside a sentence.
 #let todo(body, inline: false) = {
-  [#metadata(body)<claude-report-todo>]
+  [#metadata(body)<report-todo>]
   if inline {
     _inline-mark(todo-colour, [#smallcaps(all: true)[Todo]: #body])
   } else {
@@ -104,6 +104,7 @@
   abstract: none,
   toc: false,
   heading-numbering: "1.1",
+  provenance: true,
   body,
 ) = {
   let authors = if type(authors) == array { authors } else { (authors,) }
@@ -157,7 +158,7 @@
   block(text(fill: muted, {
     fields.join(sep)
     context {
-      let n = query(<claude-report-todo>).len()
+      let n = query(<report-todo>).len()
       if n > 0 {
         sep
         text(fill: todo-colour)[#n #smallcaps(all: true)[Todo]#if n > 1 [s]]
@@ -165,22 +166,26 @@
     }
   }))
 
-  // Provenance line.
-  block(
-    above: 1.5 * gap,
-    below: 2 * gap,
-    width: 100%,
-    inset: (y: pad),
-    stroke: (y: rule),
-    text(size: 0.9em, fill: muted)[
-      This document was produced by Claude, except for parts marked as written by #me-name.
-      #me-name's additions appear in a purple block labelled “#_label(me-colour, me-name)” or,
-      within a sentence, as #_inline-mark(me-colour)[purple highlighted text]. Orange blocks
-      with a dashed bar labelled “#_label(todo-colour)[Todo]”, and inline
-      #_inline-mark(todo-colour)[#smallcaps(all: true)[Todo]: …] marks, are open items or notes
-      from Claude.
-    ],
-  )
+  // Provenance line. Turn it off for documents Tony writes.
+  if provenance {
+    block(
+      above: 1.5 * gap,
+      below: 2 * gap,
+      width: 100%,
+      inset: (y: pad),
+      stroke: (y: rule),
+      text(size: 0.9em, fill: muted)[
+        This document was produced by Claude, except for parts marked as written by #me-name.
+        #me-name's additions appear in a purple block labelled “#_label(me-colour, me-name)” or,
+        within a sentence, as #_inline-mark(me-colour)[purple highlighted text]. Orange blocks
+        with a dashed bar labelled “#_label(todo-colour)[Todo]”, and inline
+        #_inline-mark(todo-colour)[#smallcaps(all: true)[Todo]: …] marks, are open items or notes
+        from Claude.
+      ],
+    )
+  } else {
+    v(gap)
+  }
 
   if abstract != none {
     block(inset: (x: 1.5em), below: 2 * gap)[*Abstract.* #abstract]

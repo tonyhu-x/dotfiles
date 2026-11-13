@@ -1,11 +1,11 @@
 ---
 name: typst-report
-description: Write reports, notes, handouts and other documents as Typst (.typ) files using Tony's @local/claude-report template, which marks Claude's TODOs and Tony's own comments. Use when Tony asks for a document, report or write-up in Typst / .typ format, or asks to revise such a document (address its #todo items, act on its #me comments). Do not use for Markdown, PDF-only, Word or Claude Docs output.
+description: Write reports, notes, handouts and other documents as Typst (.typ) files using Tony's @local/report template, which marks Claude's TODOs and Tony's own comments. Use when Tony asks for a document, report or write-up in Typst / .typ format, or asks to revise such a document (address its #todo items, act on its #me comments). Do not use for Markdown, PDF-only, Word or Claude Docs output.
 ---
 
 # Typst reports
 
-Tony wants the deliverable as a `.typ` file built on the `claude-report` template. The template lives in [package/lib.typ](package/lib.typ) and is installed as the local Typst package `@local/claude-report:0.1.0` (a symlink into Typst's package directory), so any `.typ` file anywhere can import it.
+Tony wants the deliverable as a `.typ` file built on the `report` template. The template lives in [package/lib.typ](package/lib.typ) and is installed as the local Typst package `@local/report:0.1.0` (a symlink into Typst's package directory), so any `.typ` file anywhere can import it.
 
 For general Typst syntax, styling and debugging, also load the `typst` skill.
 
@@ -24,12 +24,12 @@ For general Typst syntax, styling and debugging, also load the `typst` skill.
    ```
 5. **Report back** briefly: where the file is, and the open TODOs that need Tony's input.
 
-If `@local/claude-report` can't be found, run `~/.claude/skills/typst-report/install.sh` (it recreates the symlink) and compile again.
+If `@local/report` can't be found, run `~/.claude/skills/typst-report/install.sh` (it recreates the symlink) and compile again.
 
 ## Template API
 
 ```typst
-#import "@local/claude-report:0.1.0": *
+#import "@local/report:0.1.0": *
 
 #show: report.with(
   title: [Title],                       // required in practice
@@ -40,10 +40,13 @@ If `@local/claude-report` can't be found, run `~/.claude/skills/typst-report/ins
   abstract: none,                       // content
   toc: false,                           // table of contents after the header
   heading-numbering: "1.1",             // none to switch off numbering
+  provenance: true,                     // never set false yourself (see below)
 )
 ```
 
 The header shows the title, a status line (date, `meta` fields, and the number of open TODOs) and a fixed provenance line explaining that Claude wrote the document except for Tony's marked parts, and how those parts and TODOs look. Don't write a separate disclaimer.
+
+`provenance: false` hides the provenance line. It exists for documents Tony writes himself with this template. In any document Claude writes or edits content in, leave it on, and never switch it off unless Tony explicitly asks for that specific document. If Tony asks you to add content to a document that already has it off, say that nothing will show your additions as Claude's and ask whether to turn it back on.
 
 | Function | Use |
 | --- | --- |

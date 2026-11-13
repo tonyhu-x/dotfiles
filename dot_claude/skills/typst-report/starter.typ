@@ -1,4 +1,4 @@
-#import "@local/claude-report:0.1.0": *
+#import "@local/report:0.1.0": *
 
 #show: report.with(
   title: [Title of the report],
